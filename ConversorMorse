@@ -139,7 +139,7 @@ public class Texto_A_Morse {
         }
                 
     public String getMensaje(){return mens;}
-    
+    //Codigo tomado y adaptado de: https://github.com/lvalladares/Chat-Codigo-Morse/blob/master/ChatMorse/src/com/ucab/javachat/Cliente/model/CodigoMorse.java
 }
 
 
@@ -230,7 +230,7 @@ public class Morse_A_Texto {
         }
 
         mens = morse;
-        
+    //Codigo tomado y adaptado de: https://github.com/lvalladares/Chat-Codigo-Morse/blob/master/ChatMorse/src/com/ucab/javachat/Cliente/model/CodigoMorse.java  
     }
                 
     public String getMensaje(){return mens;}
