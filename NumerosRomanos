@@ -1,0 +1,167 @@
+//Metodo principal desde donde se ingresan los numeros  convertir
+
+package E_Romanos;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Hernandez
+ */
+public class Romanos {
+ 
+    
+    public static void main (String[] args) {
+        
+        
+     
+        Scanner en = new Scanner(System.in);
+     
+        System.out.println("Ingreso el numero : ");//Se ingresa el numero deseado
+        int numeros = en.nextInt();
+        romanos2 romanos = new romanos2(numeros);
+        String Str ="";
+        Str = Str + "Numero " + numeros + " = " + romanos.getEquivalente() +"\n";//se decalra el equivalente
+         
+        System.out.println(Str); //se le da salida a el equivalente
+
+       
+    }
+
+}
+
+
+
+
+//Clase de tipo herencia desde donde se calculan los equivalentes romanos
+
+package E_Romanos;
+
+/**
+ *
+ * @author Hernandez
+ */
+public class romanos2 {
+  
+    private String Equiv;
+    
+    public romanos2(int num){
+        
+        int x;
+        int mil,cent,dece,unid;
+        mil=(num/1000);
+        x=num%1000;
+        cent=x/100;
+        x=num%100;
+        dece=x/10;
+        unid=num%10;
+        String ERDN="";
+        
+        switch(mil){ //se calculan los millares
+            case 1:
+                ERDN = ERDN +"M";
+                break;
+            case 2:
+                ERDN = ERDN +"MM";
+                break;
+            case 3:
+                ERDN = ERDN +"MMM";
+                break;
+        }
+        
+        switch(cent){ //se calculann las centenas
+            case 1:
+                ERDN = ERDN +"C";
+                break;
+            case 2:
+                ERDN = ERDN +"CC";
+                break;
+            case 3:
+                ERDN = ERDN +"CCC";
+                break;
+            case 4:
+                ERDN = ERDN +"CD";
+                break;
+            case 5:
+                ERDN = ERDN +"D";
+                break;
+            case 6:
+                ERDN = ERDN +"DC";
+                break;
+            case 7:
+                ERDN = ERDN +"DCC";
+                break;
+            case 8:
+                ERDN = ERDN +"DCCC";
+                break;
+            case 9:
+                ERDN = ERDN +"CM";
+                break;
+        }
+        
+        switch(dece){ //se calculan las decenas
+            case 1:
+                ERDN = ERDN +"X";
+                break;
+            case 2:
+                ERDN = ERDN +"XX";
+                break;
+            case 3:
+                ERDN = ERDN +"XXX";
+                break;
+            case 4:
+                ERDN = ERDN +"XL";
+                break;
+            case 5:
+                ERDN = ERDN +"L";
+                break;
+            case 6:
+                ERDN = ERDN +"LX";
+                break;
+            case 7:
+                ERDN = ERDN +"LXX";
+                break;
+            case 8:
+                ERDN = ERDN +"LXXX";
+            case 9:
+                ERDN = ERDN +"XC";
+                break;
+        }
+        
+        switch(unid){//se calculan las unidades
+            case 1:
+                ERDN = ERDN +"I";
+                break;
+            case 2:
+                ERDN = ERDN +"II";
+                break;
+            case 3:
+                ERDN = ERDN +"III";
+                break;
+            case 4:
+                ERDN = ERDN +"IV";
+                break;
+            case 5:
+                ERDN = ERDN +"V";
+                break;
+            case 6:
+                ERDN = ERDN +"VI";
+                break;
+            case 7:
+                ERDN = ERDN +"VII";
+                break;
+            case 8:
+                ERDN = ERDN +"VIII";
+                break;
+            case 9:
+                ERDN = ERDN +"IX";
+                break;
+        }
+        
+        Equiv = ERDN;
+        
+    }
+
+    public String getEquivalente(){return Equiv;}
+}
